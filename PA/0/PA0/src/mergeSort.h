@@ -8,24 +8,21 @@
 #ifndef _MERGESORT_H_
 #define _MERGESORT_H_
 
-
 #include <vector>
 using std::vector;
 
 // MergeSort class definition
-class MergeSort
-{
- public:
-  MergeSort( int ); // constructor initializes vector
-  void sort(); // sort vector using merge sort
+class MergeSort {
+public:
+  MergeSort(int);               // constructor initializes vector
+  void sort();                  // sort vector using merge sort
   void displayElements() const; // display vector elements
- private:
-  int size; // vector size
-  vector< int > data; // vector of ints
-  void sortSubVector( int, int ); // sort subvector
-  void merge( int, int, int, int ); // merge two sorted vectors
-  void displaySubVector( int, int ) const; // display subvector
-}; // end class SelectionSort
+private:
+  int size;                              // vector size
+  vector<int> data;                      // vector of ints
+  void sortSubVector(int, int);          // sort subvector
+  void merge(int, int, int, int);        // merge two sorted vectors
+  void displaySubVector(int, int) const; // display subvector
+};                                       // end class SelectionSort
 
 #endif
-
