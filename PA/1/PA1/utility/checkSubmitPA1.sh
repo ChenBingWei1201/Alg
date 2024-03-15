@@ -36,7 +36,7 @@ cd check_$$
 
 tar zxvf ../"$fileName"
 
-stuid=`basename "$fileName" | sed -e 's/_.*//'`
+stuid=$(basename "$fileName" | sed -e 's/_.*//')
 echo "$fileName"
 echo "$stuid"
 

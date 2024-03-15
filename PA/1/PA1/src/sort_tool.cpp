@@ -8,6 +8,8 @@
 
 #include "sort_tool.h"
 #include <iostream>
+#include <limits.h>
+
 #define ll long long
 // Constructor
 SortTool::SortTool() {}
@@ -16,6 +18,18 @@ SortTool::SortTool() {}
 void SortTool::InsertionSort(vector<int> &data) {
   // Function : Insertion sort
   // TODO : Please complete insertion sort code here
+
+  int len = data.size();
+
+  for (int i = 1; i < len; i++) {
+    int key = data[i];
+    int j = i - 1;
+    while (j >= 0 && data[j] > key) {
+      data[j + 1] = data[j];
+      j--;
+    }
+    data[j + 1] = key;
+  }
 }
 
 // Quick sort method
@@ -53,6 +67,13 @@ void SortTool::MergeSortSubVector(vector<int> &data, int low, int high) {
   // TODO : Please complete MergeSortSubVector code here
   // Hint : recursively call itself
   //        Merge function is needed
+  if (low < high) {
+    int middle1 = (low + high) / 2;
+    int middle2 = middle1 + 1;
+    MergeSortSubVector(data, low, middle1);
+    MergeSortSubVector(data, middle2, high);
+    Merge(data, low, middle1, middle2, high);
+  }
 }
 
 // Merge
@@ -60,6 +81,28 @@ void SortTool::Merge(vector<int> &data, int low, int middle1, int middle2,
                      int high) {
   // Function : Merge two sorted subvector
   // TODO : Please complete the function
+
+  int n1 = middle1 - low + 1;
+  int n2 = high - middle2 + 1;
+  vector<int> L(n1 + 1), R(n2 + 1);
+  for (int i = 0; i < n1; i++) {
+    L[i] = data[low + i];
+  }
+  for (int i = 0; i < n2; i++) {
+    R[i] = data[middle2 + i];
+  }
+  L[n1] = INT_MAX;
+  R[n2] = INT_MAX;
+  int i = 0, j = 0;
+  for (int k = low; k < high + 1; k++) {
+    if (L[i] <= R[j]) {
+      data[k] = L[i];
+      i++;
+    } else {
+      data[k] = R[j];
+      j++;
+    }
+  }
 }
 
 // Heap sort method
