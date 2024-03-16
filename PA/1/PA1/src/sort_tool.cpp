@@ -45,15 +45,43 @@ void SortTool::QuickSortSubVector(vector<int> &data, int low, int high,
   //        Partition function is needed
   // flag == 0 -> normal QS
   // flag == 1 -> randomized QS
+
+  if (low < high) {
+    int q = 0;
+    if (flag == 0) {
+      q = Partition(data, low, high);
+      QuickSortSubVector(data, low, q - 1, flag);
+      QuickSortSubVector(data, q + 1, high, flag);
+    } else {
+      q = RandomizedPartition(data, low, high);
+      QuickSortSubVector(data, low, q - 1, flag);
+      QuickSortSubVector(data, q + 1, high, flag);
+    }
+  }
 }
 int SortTool::RandomizedPartition(vector<int> &data, int low, int high) {
   // Function : RQS's Partition the vector
   // TODO : Please complete the function
+
+  int i = rand() % (high - low + 1) + low;
+  swap(data[i], data[high]);
+  return Partition(data, low, high);
 }
 
 int SortTool::Partition(vector<int> &data, int low, int high) {
   // Function : Partition the vector
   // TODO : Please complete the function
+
+  int x = data[high];
+  int i = low - 1;
+  for (int j = low; j < high; j++) {
+    if (data[j] <= x) {
+      i++;
+      swap(data[i], data[j]);
+    }
+  }
+  swap(data[i + 1], data[high]);
+  return i + 1;
 }
 
 // Merge sort method
