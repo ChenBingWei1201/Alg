@@ -34,6 +34,7 @@ void SortTool::InsertionSort(vector<int> &data) {
 
 // Quick sort method
 void SortTool::QuickSort(vector<int> &data, int f) {
+  srand(time(nullptr));
   QuickSortSubVector(data, 0, data.size() - 1, f);
 }
 // Sort subvector (Quick sort)
@@ -50,13 +51,15 @@ void SortTool::QuickSortSubVector(vector<int> &data, int low, int high,
     int q = 0;
     if (flag == 0) {
       q = Partition(data, low, high);
-      QuickSortSubVector(data, low, q - 1, flag);
-      QuickSortSubVector(data, q + 1, high, flag);
+      // QuickSortSubVector(data, low, q - 1, flag);
+      // QuickSortSubVector(data, q + 1, high, flag);
     } else {
       q = RandomizedPartition(data, low, high);
-      QuickSortSubVector(data, low, q - 1, flag);
-      QuickSortSubVector(data, q + 1, high, flag);
+      // QuickSortSubVector(data, low, q - 1, flag);
+      // QuickSortSubVector(data, q + 1, high, flag);
     }
+    QuickSortSubVector(data, low, q - 1, flag);
+    QuickSortSubVector(data, q + 1, high, flag);
   }
 }
 int SortTool::RandomizedPartition(vector<int> &data, int low, int high) {
