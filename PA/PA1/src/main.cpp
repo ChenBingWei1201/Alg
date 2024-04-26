@@ -11,7 +11,7 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
-#define ll long long
+// #define ll long long
 
 using namespace std;
 

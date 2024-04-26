@@ -51,4 +51,3 @@
 ./bin/NTU_sort -MS inputs/1000000.case1.in outputs/1000000.case1.out
 
 ./utility/PA1_Result_Checker inputs/1000000.case1.in outputs/1000000.case1.out
-:
