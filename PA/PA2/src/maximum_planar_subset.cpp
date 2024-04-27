@@ -59,12 +59,11 @@ void MPS_Tool::TraceBack(vector<pair<int, int>> &data, vector<int> &result,
   if (i >= C.size() || j <= 0) {
     return;
   }
-  unsigned short temp = j;
   if (C[i][j] == 2) {
-    result.push_back(temp);
+    result.push_back(j);
     TraceBack(data, result, C, i + 1, j - 1);
   } else if (C[i][j] == 3) {
-    result.push_back(temp);
+    result.push_back(j);
     TraceBack(data, result, C, i, data[j].second - 1);
     TraceBack(data, result, C, data[j].second + 1, j - 1);
   }
