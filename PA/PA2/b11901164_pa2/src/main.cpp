@@ -27,7 +27,6 @@ int main(int argc, char *argv[]) {
   CommonNs::TmStat stat;
 
   //////////// read the input file /////////////
-
   fstream fin(argv[1]);
   fstream fout;
   fout.open(argv[2], ios::out);
@@ -48,7 +47,7 @@ int main(int argc, char *argv[]) {
   //////////// the algorithm part ////////////////
   tmusg.periodStart();
   MPS_Tool mps;
-  vector<int> output = mps.FindPair(data, n);
+  vector<int> output = mps.ConstructTable(data, n); // Construct tables for dp
   tmusg.getPeriodUsage(stat);
   cout << "The total CPU time: " << (stat.uTime + stat.sTime) / 1000.0 << "ms"
        << endl;

@@ -17,11 +17,11 @@ class MPS_Tool {
 public:
   MPS_Tool();  // constructor
   ~MPS_Tool(); // destructor
-  vector<int> FindPair(vector<pair<int, int>> &data, int n);
+  vector<int> ConstructTable(vector<pair<int, int>> &data, int n);
 
 private:
-  void FindChord(vector<pair<int, int>> &data, vector<int> &result,
-                 vector<vector<char>> &s, int i, int j);
+  void TraceBack(vector<pair<int, int>> &data, vector<int> &result,
+                 vector<vector<char>> &C, int i, int j);
 };
 
 #endif
