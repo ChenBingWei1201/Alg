@@ -4,7 +4,7 @@ Date: 2024/04/25
 =====
 SYNOPSIS:
 
-mps <input_file_name> <output_file_name>
+./mps <input_file_name> <output_file_name>
 
 =====
 DIRECTORY:
@@ -24,7 +24,7 @@ Then compile the demo, simply follow the following steps
 ======
 HOW TO RUN:
 
-	./bin/mps <input_file_name> <output_file_name>
+	./bin/mps inputs/<input_file_name> outputs/<output_file_name>
 	For example,
 	under <student_id>_pa2
 	./bin/mps inputs/1000.in outputs/1000.out
