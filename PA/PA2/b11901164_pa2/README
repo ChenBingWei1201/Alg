@@ -1,0 +1,34 @@
+This is README file for Algorithm PA#2
+Author: B11901164 陳秉緯
+Date: 2024/04/25
+=====
+SYNOPSIS:
+
+mps <input_file_name> <output_file_name>
+
+=====
+DIRECTORY:
+
+bin/	  executable binary
+doc/	  reports
+inputs/   input data 
+outputs/  output result
+lib/	  library
+src/ 	  source C++ codes
+utility/  checker
+======
+HOW TO CIMPILE:
+
+Then compile the demo, simply follow the following steps
+	make
+======
+HOW TO RUN:
+
+	./bin/mps <input_file_name> <output_file_name>
+	For example,
+	under <student_id>_pa2
+	./bin/mps inputs/1000.in outputs/1000.out
+======
+OTHER NOTICE:
+    clean:
+	make clean

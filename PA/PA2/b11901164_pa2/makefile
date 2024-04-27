@@ -13,11 +13,11 @@ all	: bin/mps
 	@echo -n ""
 
 
-bin/mps    : maxPlanarSubset_opt.o main_opt.o lib
-			$(CC) $(OPTFLAGS)  maxPlanarSubset_opt.o main_opt.o -ltm_usage -Llib  -o bin/mps
+bin/mps    : maximum_planar_subset_opt.o main_opt.o lib
+			$(CC) $(OPTFLAGS)  maximum_planar_subset_opt.o main_opt.o -ltm_usage -Llib  -o bin/mps
 main_opt.o 	   	: src/main.cpp lib/tm_usage.h
 			$(CC) $(CFLAGS) $< -Ilib -o $@
-maxPlanarSubset_opt.o	: src/maxPlanarSubset.cpp src/maxPlanarSubset.h
+maximum_planar_subset_opt.o	: src/maximum_planar_subset.cpp src/maximum_planar_subset.h
 			$(CC) $(CFLAGS) $(OPTFLAGS) $< -o $@
 
 lib: lib/libtm_usage.a
