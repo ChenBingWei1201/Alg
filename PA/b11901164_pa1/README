@@ -25,7 +25,6 @@ Then compile the demo, simply follow the following steps
 ======
 HOW TO RUN:
 
-	cd bin/
 	./bin/NTU_sort -[IS|MS|QS|HS] <input_file_name> <output_file_name>
 	For example,
 	under <student_id>_pa1
