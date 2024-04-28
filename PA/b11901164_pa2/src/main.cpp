@@ -55,11 +55,11 @@ int main(int argc, char *argv[]) {
 
   //////////// write the output file ///////////
   int result = output.front();
-  output.erase(output.begin()); // delete the first element
+  output.erase(output.begin());
   for (int i = 0; i < output.size(); i++) {
     output[i] = data[output[i]].second;
   }
-  sort(output.begin(), output.begin() + result); // sort by the first element
+  sort(output.begin(), output.begin() + result);
 
   fout << result << endl;
 

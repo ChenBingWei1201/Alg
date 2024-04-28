@@ -20,8 +20,8 @@ public:
   vector<int> ConstructTable(vector<pair<int, int>> &data, int n);
 
 private:
-  void TraceBack(vector<pair<int, int>> &data, vector<int> &result,
-                 vector<vector<char>> &C, int i, int j);
+  void TraceBack(vector<pair<int, int>> &data, vector<vector<char>> &C, int i,
+                 int j);
 };
 
 #endif
