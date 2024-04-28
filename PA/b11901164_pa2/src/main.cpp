@@ -54,14 +54,14 @@ int main(int argc, char *argv[]) {
   cout << "memory: " << stat.vmPeak << "KB" << endl;
 
   //////////// write the output file ///////////
-  int result = output.front();
+  int shift = output.front();
   output.erase(output.begin());
   for (int i = 0; i < output.size(); i++) {
     output[i] = data[output[i]].second;
   }
-  sort(output.begin(), output.begin() + result);
+  sort(output.begin(), output.begin() + shift);
 
-  fout << result << endl;
+  fout << shift << endl;
 
   for (int i = 0; i < output.size(); i++) {
     fout << output[i] << " " << data[output[i]].second << endl;
